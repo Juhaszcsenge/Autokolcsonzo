@@ -105,18 +105,28 @@ class Autokolcsonzo:
 # ====== Program inicializálása ======
 def rendszer_elokeszitese() -> Autokolcsonzo:
     kolcsonzo = Autokolcsonzo("VillámAutó")
+    
+    print("--- Kezdeti bérlések ---")
+    felhasznalo1 = Felhasznalo("Lakatos Nina")
+    felhasznalo2 = Felhasznalo("Szoboszlai Csilla")
+    felhasznalo3 = Felhasznalo("Kovács Kinga")
+    felhasznalo4 = Felhasznalo("Berrei Enikő")
+    felhasznalo5 = Felhasznalo("Turcsányi Lajos")
 
     kolcsonzo.auto_hozzaadasa(Szemelyauto("JKL-321", "Mazda 3", 8800, 5, True))
     kolcsonzo.auto_hozzaadasa(Szemelyauto("XYZ-654", "Volkswagen Golf", 9200, 5, False))
     kolcsonzo.auto_hozzaadasa(Teherauto("TRK-999", "Iveco Daily", 16000, 2000, 4.0))
+    kolcsonzo.auto_hozzaadasa(Szemelyauto("AGDH-124", "Mazda 6", 8800, 5, True))
+    kolcsonzo.auto_hozzaadasa(Szemelyauto("HJK-732", "Volkswagen PASSAT", 9200, 3, False))
+    kolcsonzo.auto_hozzaadasa(Teherauto("OLP-286", "Ford Focus", 16000, 2000, 4.0))
 
     print("--- Új bérlések felvétele ---")
     kolcsonzo.berel_auto("JKL-321", date(2025, 6, 20))
     kolcsonzo.berel_auto("XYZ-654", date(2025, 6, 21))
     kolcsonzo.berel_auto("TRK-999", date(2025, 6, 22))
-    kolcsonzo.berel_auto("XYZ-654", date(2025, 6, 21))  # próbál újra bérelni ugyanarra a napra
-    kolcsonzo.berel_auto("AAA-111", date(2025, 6, 24))  # nem létező rendszám
-    kolcsonzo.berel_auto("JKL-321", date(2024, 5, 15))  # múltbeli dátum
+    kolcsonzo.berel_auto("XYZ-654", date(2025, 6, 21))  
+    kolcsonzo.berel_auto("AAA-111", date(2025, 6, 24))  
+    kolcsonzo.berel_auto("JKL-321", date(2024, 5, 15))  
 
     print("---------------------------")
     return kolcsonzo
