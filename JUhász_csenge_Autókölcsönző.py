@@ -14,6 +14,15 @@ class Auto(ABC):
     @abstractmethod 
     def __str__(self):
         pass 
+      
+ # -------- Bérlő -----------#      
+      
+class Berlo:
+    def __init__(self, nev):
+        self.nev = nev
+
+    def __str__(self):
+        return self.nev
     
 # ====== Személyautó osztály ======
 class Szemelyauto(Auto):
@@ -104,14 +113,14 @@ class Autokolcsonzo:
 
 # ====== Program inicializálása ======
 def rendszer_elokeszitese() -> Autokolcsonzo:
-    kolcsonzo = Autokolcsonzo("VillámAutó")
+    kolcsonzo = Autokolcsonzo("Autókölcsönző")
     
     print("--- Kezdeti bérlések ---")
-    felhasznalo1 = Felhasznalo("Lakatos Nina")
-    felhasznalo2 = Felhasznalo("Szoboszlai Csilla")
-    felhasznalo3 = Felhasznalo("Kovács Kinga")
-    felhasznalo4 = Felhasznalo("Berrei Enikő")
-    felhasznalo5 = Felhasznalo("Turcsányi Lajos")
+    berlo1 = Berlo("Lakatos Nina")
+    berlo2 = Berlo("Szoboszlai Csilla")
+    berlo3 = Berlo("Kovács Kinga")
+    berlo4 = Berlo("Berrei Enikő")
+    berlo5 = Berlo("Turcsányi Lajos")
 
     kolcsonzo.auto_hozzaadasa(Szemelyauto("JKL-321", "Mazda 3", 8800, 5, True))
     kolcsonzo.auto_hozzaadasa(Szemelyauto("XYZ-654", "Volkswagen Golf", 9200, 5, False))
