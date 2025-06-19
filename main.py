@@ -1,5 +1,5 @@
 from datetime import date
-from rental import CarRental
+from rental import Rental
 from PassengerCar import PassengerCar
 from truck import Truck
 from tenant import Tenant 
