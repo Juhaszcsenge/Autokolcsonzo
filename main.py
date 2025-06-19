@@ -2,12 +2,13 @@ from datetime import date
 from rental import Rental
 from PassengerCar import PassengerCar
 from truck import Truck
-from tenant import Tenant 
+from tenant import Tenant
+from AutoRental import AutoRental  
 
-def setup_system() -> CarRental:
-    rental_company = CarRental("Car Rental")
+def setup_system() -> AutoRental:
+    rental_company = AutoRental("Credit Car rendtal") 
 
-    print("--- Initial rentals ---")
+    print("--- Kezdeti bérlések ---")
     tenant1 = Tenant("Lakatos Nina")    
     tenant2 = Tenant("Szoboszlai Csilla")
     tenant3 = Tenant("Kovács Kinga")
@@ -21,7 +22,7 @@ def setup_system() -> CarRental:
     rental_company.add_car(PassengerCar("HJK-732", "Volkswagen PASSAT", 9200, 3, False))
     rental_company.add_car(Truck("OLP-286", "Ford Focus", 16000, 2000, 4.0))
 
-    print("--- Registering new rentals ---")
+    print("--- Új bérlések rögzítése ---")
     rental_company.rent_car("JKL-321", date(2025, 6, 20))
     rental_company.rent_car("XYZ-654", date(2025, 6, 21))
     rental_company.rent_car("TRK-999", date(2025, 6, 22))
@@ -33,7 +34,7 @@ def setup_system() -> CarRental:
     return rental_company
 
 
-def user_interface(rental_company: CarRental):
+def user_interface(rental_company: AutoRental):
     while True:
         print("\n--- Autókölcsönző rendszer ---")
         print("1. Autó bérlése")
@@ -65,7 +66,6 @@ def user_interface(rental_company: CarRental):
             break
         else:
             print("Érvénytelen választás.")
-    
 
 
 if __name__ == "__main__":
